@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Note Taker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
+    <link rel="stylesheet" href="./css/jquery-ui.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./scripts/jquery-ui.min.js"></script>
+    <script src="./scripts/script.js"></script>
+</head>
+<body>
+    <div class="header d-flex align-items-center justify-content-center">
+        <h1>Note Taker</h1>
+    </div>
+    <div class="container mt-5">
+        <div id="main" class="row row-cols-1 row-cols-md-3">
+            
+            <div class="col mb-4">
+                <div class="card h-100 shadow rounded">
+                    <div class="card-header">
+                        <h4>NOTE #: ${data.id}</h4>
+                        <h4><i class="fas fa-calendar-week"> </i> ${data.date}</h4>
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title border border-dark p-2">${data.note}</h5>
+                    <button class="btnDelete btn btn-danger" onclick="deleteNote(${data.id})">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+        <button id="btnAddNote" class="btn btn-primary btn-lg">Add Note</button>
+    </div>
+    <div id="dlgAddNote" style="display: none;" title="Add a Note ...">
+        <textarea id="txtAddNote" style="display: block; width: 100%;"></textarea>
+        <button id="btnSave" class="btn btn-primary mt-2" onclick="saveNote();">Save Note</button>
+    </div>
+</body>
+</html>
