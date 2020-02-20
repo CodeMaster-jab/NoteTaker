@@ -44,9 +44,10 @@ app.post('/api/notes', (req, res) => {
   res.sendFile(path.join(__dirname, '/db/db.json'));
 });
 
-app.delete('/api/notes/\*', (req, res) => {
+app.delete('/api/notes/:id', (req, res) => {
   // Get the ID
-  const id = req.url.split('/')[3];
+  const id = req.params.id;
+  // const id = req.url.split('/')[3];
   // Read the DB file
   const db = fs.readFileSync(path.join(__dirname, '/db/db.json'), 'utf8');
   // Remove the Object with ID
